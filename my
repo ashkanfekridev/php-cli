@@ -1,0 +1,13 @@
+<?php
+require './helpController.php';
+	require './CLI.php';
+
+	$cli= new AppCLI();
+
+	$cli->crateCommand('-h', ['help', 'index']);
+	$cli->crateCommand('help', function()
+	{
+		return 's';
+	});
+
+	return print_r($cli->run($argv));
